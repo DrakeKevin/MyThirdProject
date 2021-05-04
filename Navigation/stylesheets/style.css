@@ -1,0 +1,149 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    height: 80px;
+    background: #008080;
+}
+
+.main-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#check {
+    display: none;
+}
+
+.checkbtn {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: turquoise;
+    color: #fff;
+    padding: 0.8rem;
+    cursor: pointer;
+    display: none;
+}
+
+.main-nav .logo {
+    max-width: 70px;
+    background: #ffffff;
+    padding: 1px;
+    border-radius: 50%;
+}
+
+.main-menu {
+    display: flex;
+}
+
+.main-menu li{
+    list-style: none;
+    display: inline-block;
+    justify-content: center;
+    padding: 10px;
+}
+
+.main-menu li a {
+    text-decoration: none;
+    color: #ffff;
+    transition: 0.3s;
+}
+
+.main-menu a:hover {
+    padding-bottom: 3px;
+    border-bottom: 2px solid #fff;
+}
+
+.right-menu {
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
+
+.right-menu .btnlg {
+    padding: 0.4rem 0.8rem;
+    margin-bottom: 5px;
+    border: none;
+    background: #000fff;
+    color: #fff;
+    border-radius: 2px;
+    outline: none;
+}
+
+.right-menu .btnsp {
+    padding: 0.4rem 0.8rem;
+    margin-top: 5px;
+    border: none;
+    background: #01c001;
+    color: #fff;
+    border-radius: 2px;
+    outline: none;
+}
+
+.right-menu .btnlg, .right-menu .btnsp {
+    transition: 0.6s;
+}
+
+.right-menu .btnlg:hover, .right-menu .btnsp:hover {
+    transform: scale(0.9);
+}
+
+/* Mobiles With Largest Screen */
+@media (max-width: 468px) {
+    .checkbtn {
+        display: block;
+        z-index: 1;
+    }
+
+    .logo {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 50px;
+    }
+
+    .main-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.329);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 1s;
+    }
+
+    .right-menu {
+        position: absolute;
+        left: 40%;
+        top: 20%;
+        padding: 10px;
+    }
+
+    #check:checked ~ .main-menu {
+        left: 0;
+    }
+}
+
+@media (max-width: 540px) {
+    .main-nav {
+        justify-content: space-between;
+    }
+
+    .main-menu {
+        margin-right: 80px;
+    }
+}

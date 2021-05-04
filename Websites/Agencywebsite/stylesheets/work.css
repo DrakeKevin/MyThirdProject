@@ -1,0 +1,240 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header {
+    display: block;
+}
+
+#check {
+    display: none;
+}
+
+.checkbtn {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #ff0000;
+    color: #fff;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 2;
+    display: none;
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    padding: 14px;
+    background: #ff00005e;
+    color: #fff;
+    border-radius: 50%;
+}
+
+.navigation {
+    display: none;
+}
+
+.portfolios {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.portfolios section {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 5px;
+}
+
+.portfolios section img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.portfolios section .active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 1s;
+}
+
+.portfolios section .active button {
+    display: block;
+    background: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 5px 15px;
+    outline: none;
+}
+
+.portfolios section:hover .active {
+    opacity: 1;
+}
+
+@media (max-width: 540px) {
+    .checkbtn {
+        display: block;
+    }
+
+    .navigation {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100vw;
+        height: 100vh;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 1s;
+    }
+
+    #check:checked ~ .navigation {
+        left: 0;
+    }
+
+    .navigation a {
+        background: #000;
+        color: #fff;
+        padding: 0.5rem 0.8rem;
+    }
+
+    .navigation li {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .navigation a:hover {
+        opacity: 0.8px;
+    }
+
+    .navigation a, .navigation li {
+        text-decoration: none;
+        list-style: none;
+    }
+
+    .title {
+        padding: 1rem;
+        margin-top: 80px;
+    }
+
+    .title h1 {
+        margin-bottom: 5px;
+    }
+
+    .portfolios {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 468px) {
+    .checkbtn {
+        display: block;
+    }
+
+    .logo {
+        left: 0;
+    }
+
+    .navigation {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100vw;
+        height: 100vh;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 1s;
+    }
+
+    #check:checked ~ .navigation {
+        left: 0;
+    }
+
+    .navigation a {
+        background: #000;
+        color: #fff;
+        padding: 0.5rem 0.8rem;
+    }
+
+    .navigation li {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .navigation a:hover {
+        opacity: 0.8px;
+    }
+
+    .navigation a, .navigation li {
+        text-decoration: none;
+        list-style: none;
+    }
+}
+
+@media (max-width: 320px) {
+    .hero-container h1 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .logo {
+        position: relative;
+        left: 0;
+    }
+
+    header, .navigation {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navigation a {
+        background: #000;
+        color: #fff;
+        padding: 0.5rem 0.8rem;
+        margin: 10px;
+        margin-right: 10px;
+    }
+
+    .navigation a, .navigation li {
+        text-decoration: none;
+        list-style: none;
+    }
+
+    .right-menu li i {
+        padding: 6px;
+    }
+
+    .title {
+        padding: 1rem;
+    }
+
+    .portfolios {
+        margin-top: 10px;
+        padding: 1rem;
+    }
+}

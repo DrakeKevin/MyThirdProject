@@ -1,0 +1,55 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero {
+    background-image: url("https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928_1280.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    height: 100%;
+}
+
+.hero-container h1 {
+    margin-bottom: 5px;
+    font-size: 2rem;
+}
+
+.hero-container p {
+    text-align: justify;
+    line-height: 26px;
+    width: 80%;
+}
+
+.hero-container .btn {
+    padding: 0.5rem 0.8rem;
+    background: #ff02ff;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    outline: none;
+    margin-top: 10px;
+}
+
+.hero-container .btn:hover {
+    transform: scale(0.9);
+}
+
+
+

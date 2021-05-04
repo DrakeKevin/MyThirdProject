@@ -1,0 +1,258 @@
+:root {
+    --dark-color: #000;
+    --white-color: #fff;
+    --halfgray-color: #ddd;
+    --deepgray-color: #ccc;
+    --box-shadow: 0px 1px 5px rgba(104,104,104,0.8);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--deepgray-color);
+    margin: 50px 30px;
+    line-height: 1.4;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.main-nav {
+    display: block;
+}
+
+.main-nav ul{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.main-nav li {
+    list-style: none;
+}
+
+.main-nav a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: var(--halfgray-color);
+    color: var(--dark-color);
+    border: none;
+    padding: 0.8rem;
+    box-shadow: var(--box-shadow);
+    font-size: 1.1rem;
+    transition: 1s;
+}
+
+.main-nav a:hover {
+    background: var(--dark-color);
+    color: var(--white-color);
+}
+
+.top-container {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas: 
+    "hero hero top-box-b"
+    "hero hero top-box-a";
+    margin-top: 20px;
+}
+
+.hero {
+    grid-area: hero;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    min-height: 400px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: #fff;
+    box-shadow: var(--box-shadow);
+    transition: 1s ease;
+}
+
+/* Global Styling Button*/
+.btn {
+    background: var(--dark-color);
+    color: var(--white-color);
+    border: none;
+    padding: 0.5rem 0.8rem;
+    box-shadow: var(--box-shadow);
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.hero p {
+    letter-spacing: 1px;
+    line-height: 24px;
+    margin-top: 10px;
+}
+
+.hero .btn {
+    background: var(--white-color);
+    color: var(--dark-color);
+    transition: 1s ease;
+}
+
+.hero .btn:hover {
+    opacity: 0.8;
+}
+
+.top-box {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background: var(--halfgray-color);
+    padding: 1.6rem;
+    box-shadow: var(--box-shadow);
+}
+
+.top-box .btn:hover {
+    transition: 1s ease;
+    transform: scale(0.9);
+}
+
+.top-box-b {
+    grid-area: top-box-b;
+}
+
+.top-box-a {
+    grid-area: top-box-a;
+}
+
+.boxs {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-top: 20px;
+}
+
+.box {
+    background: var(--halfgray-color);
+    padding: 1.6rem;
+    box-shadow: var(--box-shadow);
+}
+
+.box i {
+    margin-bottom: 10px;
+}
+
+.box h3 {
+    margin-bottom: 10px;
+}
+
+.box p {
+    line-height: 28px;
+}
+
+.info {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    background: var(--halfgray-color);
+    padding: 1rem;
+    margin-top: 20px;
+    box-shadow: var(--box-shadow);
+}
+
+.info img {
+    width: 100%;
+    height: 300px;
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.info-content h1 {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.info-content p {
+    line-height: 28px;
+    margin-top: 10px;
+}
+
+.info-content .btn {
+    margin-top: 10px;
+    transition: 1s ease;
+}
+
+.info-content .btn:hover {
+    opacity: 0.8;
+}
+
+.portfolios {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin-top: 20px;
+}
+
+.portfolios img {
+    width: 100%;
+    height: 100%;
+    box-shadow: var(--box-shadow);
+}
+
+footer {
+    background: var(--dark-color);
+    padding: 1.6rem;
+    margin-top: 20px;
+}
+
+footer p {
+    text-align: center;
+    color: var(--white-color);
+}
+
+@media (max-width: 468px) {
+    .main-nav ul {
+        grid-template-columns: 1fr;
+    }
+
+    .top-container {
+        grid-template-areas: 
+        "hero hero"
+        "top-box-b top-box-a";
+    }
+
+    .hero, .top-box {
+        padding: 1rem;
+    }
+
+    .info {
+        grid-template-columns: 1fr;
+    }
+
+    .info-content h1 {
+        font-size: 1.1rem;
+    }
+
+    .info-content p {
+        line-height: 38px;
+    }
+}
